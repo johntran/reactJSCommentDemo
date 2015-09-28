@@ -12,7 +12,7 @@ var CommentBox = React.createClass({displayName: "CommentBox",
       }.bind(this)
     });
   },
-  handleCommentSubmit: function(comment){
+  handleCommentSubmit: function(){
     var comments = this.state.data;
     var newComments = comments.concat([comment]);
     this.setState({data: newComments});

@@ -12,22 +12,8 @@ var CommentBox = React.createClass({displayName: "CommentBox",
       }.bind(this)
     });
   },
-  handleCommentSubmit: function(comment){
-    var comments = this.state.data;
-    var newComments = comments.concat([comment]);
-    this.setState({data: newComments});
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      type: 'POST',
-      data: comment,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+  handleCommentSubmit: function(){
+    //TODO: Submite to the server and refresh list
   },
   getInitialState: function() {
     return {data: []};

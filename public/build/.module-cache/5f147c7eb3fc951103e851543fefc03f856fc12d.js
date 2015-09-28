@@ -23,9 +23,8 @@ var CommentForm = React.createClass({displayName: "CommentForm",
     if (!text || !author){
       return;
     }
-    this.props.onCommentSubmit({author: author, text: text});
     React.findDOMNode(this.refs.author).value = '';
-    React.findDOMNode(this.refs.text).value = '';
+    React.findDOMNode(this.refs.text).values = '';
     return;
   },
   render: function() {

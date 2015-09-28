@@ -12,10 +12,7 @@ var CommentBox = React.createClass({displayName: "CommentBox",
       }.bind(this)
     });
   },
-  handleCommentSubmit: function(comment){
-    var comments = this.state.data;
-    var newComments = comments.concat([comment]);
-    this.setState({data: newComments});
+  handleCommentSubmit: function(){
     $.ajax({
       url: this.props.url,
       dataType: 'json',

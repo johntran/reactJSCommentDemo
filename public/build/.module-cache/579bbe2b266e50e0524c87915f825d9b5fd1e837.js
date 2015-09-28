@@ -23,16 +23,15 @@ var CommentForm = React.createClass({displayName: "CommentForm",
     if (!text || !author){
       return;
     }
-    this.props.onCommentSubmit({author: author, text: text});
     React.findDOMNode(this.refs.author).value = '';
-    React.findDOMNode(this.refs.text).value = '';
+    React.findDOMNode(this.refs.text).values = '';
     return;
   },
   render: function() {
     return (
       React.createElement("form", {className: "commentForm", onSubmit: this.handleSubmit}, 
           React.createElement("input", {type: "text", placeholder: "Your name", ref: "author"}), 
-          React.createElement("input", {type: "text", placeholder: "Say something...", ref: "text"}), 
+          React.createElement("input", {type: "text", placeholder: "Say something..."}), 
           React.createElement("input", {type: "submit", value: "Post"})
         )
     );
